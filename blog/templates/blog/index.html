@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+
+<body class="overlay">
+
+	<div class="container">
+		<div class="navbar clearfix">
+			<ul class="menu">
+				<li>
+					<a href="admin">Profile</a>
+				</li>
+				<li>
+					<a href="#">Education</a>
+				</li>	
+				<li>
+					<a href="#">Skills</a>
+				</li>
+			</ul>
+		</div>
+		<div class="img_with_name clearfix">
+			<img class="my_photo" src="img/img.jpg">
+			<p class="my_name">Maksym Kovalov</p>
+			{% for post in posts %}
+				<div>
+					<p>published: {{ post.published_date }}</p>
+					<h1><a href="">{{ post.title }}</a></h1>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+			{% endfor %}
+			
+		</div>
+	</div>
+
+</body>
+</html>
